@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homework 2</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="src/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b25557effa.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+<div class="container">
+    <div class="enter-city">
+      <form id="search-form">
+        <input type="text"
+        placeholder="Enter City...."
+				id="city-input">
+          <button type="submit" class="btn btn-primary mb-2" value="Search">🔎</button>
+      </form>
+       </div>
+       <div class="col-2">
+         <button class="btn btn-success w-100" id="current-location-button">
+           Current
+         </button>
+        </div>
+       <div class="row">
+         <div class="col">
+       <div><h1 id="city">
+          </h1>
+      </div>
+      <div>
+      <h2 id="current-date">Monday, 12:02 AM</h2>
+      <h1 class="main-temperature" id="temperature">
+        <span id="units"><sup class="celsius-or-fahnreit">
+          <a href="#" id="fahrenheit-link"><strong>F°</a></strong>
+          <a href="#" id="celsius-link">|C°</a></sup></h1>
+        </span>
+      <h4>Precipitation:80% 
+      </br>
+      Humidity:<span id="humidity"></span>
+      </br>
+      Wind: <span id="wind"></span>
+      </h4>
+        <span class="main-weather" id="description"><i class="fas fa-cloud-showers-heavy weather-of-the-day"></i>
+        <strong></strong></span>
+    </div>
+  </div>
+  <div class="container">
+      <div class="row">
+    <div class="col-2">
+        <span class="days">Mon</span>
+    <i class="fas fa-cloud-showers-heavy"></i>
+    <span class="temperature"> <strong>57°</strong> 50°</span>
+    </div>
+      <div class="col-2">
+          <span class="days">Tue</span>
+          <i class="fas fa-cloud-showers-heavy"></i>
+          <span class="temperature"> <strong>59°</strong> 50°</span>
+        </div>
+      <div class="col-2">
+          <span class="days">Wed</span>
+        <i class="fas fa-cloud"></i>
+        <span class="temperature"> <strong>60°</strong> 50°</span>
+      </div>
+      <div class="col-2">
+          <span class="days">Thu</span>
+        <i class="fas fa-cloud"></i>
+        <span class="temperature"> <strong>64°</strong> 55°</span>
+      </div>
+      <div class="col-2">
+        <span class="days">Fri</span>
+         <i class="fas fa-cloud-sun-rain"></i>
+         <span class="temperature"> <strong>57°</strong> 50°</span>
+        </div>
+      </div> 
+  </div>
+</div>
+
+    <script src="src/index.js">
+    </script>
+  </body>
+</html>
