@@ -1,0 +1,67 @@
+body {
+  font-family: "Raleway", sans-serif;
+}
+h1,
+h2,
+h4 {
+  color: #008480;
+  font-family: "Raleway", sans-serif;
+}
+
+.container {
+  display: block;
+}
+.div {
+  display: block;
+}
+.fa-cloud-showers-heavy {
+  color: gray;
+  font-size: 50px;
+  position: relative;
+  top: 2px;
+}
+.fa-cloud {
+  font-size: 50px;
+  position: relative;
+  top: 0;
+  color: gray;
+}
+
+.fa-cloud-sun-rain {
+  font-size: 50px;
+  position: relative;
+  top: 0;
+}
+.enter-city {
+  display: block;
+}
+
+.days {
+  position: relative;
+  top: -55px;
+  left: 50px;
+}
+.temperature {
+  position: relative;
+  left: -52px;
+  top: 30px;
+}
+.celsius-or-fahnreit {
+  font-size: 20px;
+  color: #008480;
+}
+.main-temperature {
+  color: #686d76;
+  font-weight: bold;
+}
+.main-weather {
+  position: relative;
+  padding: 70px;
+  top: -130px;
+  right: -140px;
+  font-size: 50px;
+  color: gray;
+}
+.weather-of-the-day {
+  font-size: 80px;
+}
