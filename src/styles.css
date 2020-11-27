@@ -65,3 +65,10 @@ h4 {
 .weather-of-the-day {
   font-size: 80px;
 }
+.main-temperature .active {
+  color: black;
+  cursor: default;
+}
+.main-temperature .active:hover {
+  text-decoration: none;
+}

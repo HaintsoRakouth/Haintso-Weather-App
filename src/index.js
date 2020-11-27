@@ -22,17 +22,24 @@ function formatTime(date) {
   return `${day}, ${hours}:${minutes}`;
 }
 
-function convertToCelsius(event) {
+function displayCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 11;
+  // add the active class in the fahrenheit
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let celsiusTemperature = (fahrenheitTemperature - 32) / 1.8;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-function convertToFahrenheit(event) {
+function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 52;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
+
 //homework five function search for a city it should display the name of the city on the result pag
 function showTemperature(response) {
   console.log(response.data);
@@ -43,15 +50,23 @@ function showTemperature(response) {
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
-  );
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+  );document.querySelector("#description").innerHTML =
+  response.data.weather[0].main;
+
+let iconElement = document.querySelector("#icon");
+iconElement.setAttribute(
+  "src",
+  `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+);
+iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 //task one
 let dateElement = document.querySelector("#current-date");
 let currentTime = new Date();
 dateElement.innerHTML = formatTime(currentTime);
+
+let fahrenheitTemperature = null;
 
 //task two
 let searchForm = document.querySelector("#search-form");
@@ -63,10 +78,10 @@ searchCity("Palaiseau");
 
 //bonus feature
 let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 //homework five first task
 
