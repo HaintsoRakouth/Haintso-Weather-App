@@ -79,7 +79,7 @@ forecastElement.innerHTML += `
 function searchCity(city) {
   let apiKey = "3b86af7fc308a37a703e9fe00272cd4f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrl).then(displayTemperature);
 
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
 axios.get(apiUrl).then(displayForecast);
@@ -89,6 +89,7 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   searchCity(cityInputElement.value);
+  console.log(cityInputElement);
 }
 
 function searchLocation(position) {
@@ -139,4 +140,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 //Display Current Location and Default Location Palaiseau
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
 searchCity("Palaiseau");
